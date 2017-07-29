@@ -2,5 +2,27 @@ extends layout
 
 block content
 
-  h1= title
-  p #{center}
+  header
+    h2= title
+  #wrapper
+    #subtitle
+      h1= subtitle
+    #sidebar
+      ul
+        for link in sidebarLinks
+          li: a(href='')= link
+        else
+          li oops
+    main
+      #anchors
+        p On this page
+        p: a(href='#') Links to
+        p: a(href='#') Content on
+        p: a(href='#') This page
+        p: a(href='#') Anchors that is
+
+      #intro-paragraph
+        p #{text}
+
+      section
+        h2.section-header: span

@@ -1,8 +1,144 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #000000;
+  font-family: 'Frank Ruhl Libre', sans-serif;
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 a {
-  color: #00B7FF;
+  color: cornflowerblue;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  background-color: darkblue;
+  width: 100%;
+  height: 8em;
+  margin: 0;
+  border-bottom: #000 solid 4px;
+}
+
+header h2 {
+  color: white;
+  font-weight: bold;
+  padding-top: 1em;
+  margin: 0 auto 0 auto;
+  padding-left: 1em;
+  max-width: 900px;
+}
+
+header h2 span {
+  background-color: white;
+}
+
+#sidebar {
+  float: left;
+  width: 20%;
+}
+
+#sidebar ul {
+  padding-left: 0;
+}
+
+#sidebar li {
+  list-style-type: none;
+  margin-top: .5em;
+  word-wrap: break-word;
+}
+
+#sidebar a {
+  color: black;
+  font-weight: bold;
+  margin-top: .5em;
+}
+
+main {
+  float: right;
+  width: 80%;
+}
+
+#wrapper {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#subtitle {
+  margin-left: 3em;
+}
+
+main #intro-paragraph {
+  padding: 2em 0 2em 0;
+  border: cornflowerblue solid 4px;
+  border-left: 0px;
+  border-right: 0px;
+  margin-left: .5em;
+  width: 70%;
+}
+
+main #intro-paragraph p {
+  margin: auto 10px auto 10px;
+}
+
+main #anchors {
+  width: 25%;
+  background-color: #dedede;
+  border-radius: 8px;
+  float: right;
+}
+
+main #anchors p {
+  margin-left: 2em;
+}
+
+.code-snippet {
+  margin: 1.5em;
+  border-radius: 5px;
+  background-color: lightgray;
+  font-family: "Droid Sans Mono", monospace;
+  padding: 1em;
+  border-left: 4px solid;
+  border-color: cornflowerblue;
+}
+
+.code-snippet .keyword {
+  color: darkorange;
+}
+
+.code-snippet .string {
+  color: forestgreen;
+}
+
+.code-snippet .number {
+  color: dodgerblue;
+}
+
+.code-snippet .variable {
+  color: mediumblue;
+}
+
+.code-snippet .property {
+  color: mediumpurple;
+}
+
+.code-snippet .comment {
+  color: dimgrey;
+}
+
+.quote {
+
+}
+
+section p {
+  margin: 2em 1em 1em 0;
 }
