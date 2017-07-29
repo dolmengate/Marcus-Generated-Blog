@@ -13,16 +13,19 @@ exports.fill = function (numWords, start) {
 
 // get capitalized words
 exports.title = function (numWords) {
-    var re = /[a-z]/;
+    var lowercase = /[a-z]/;
     var words = getWords(numWords).split(' ');
     for (var w = 0; w < words.length - 1; w++) {
         var upperedWord = words[w];
-        if (re.test(words[w].charAt(0))) {
+        if (lowercase.test(words[w].charAt(0))) {
             upperedWord = words[w].charAt(0).toUpperCase();
             for (var l = 1; l < words[w].length; l++) {
                 upperedWord += words[w].charAt(l);
             }
         }
+        var punctuation = /[.,:;]/;
+        if (punctuation.test(upperedWord.charAt(upperedWord.length - 1)))
+            upperedWord = upperedWord.slice(0, upperedWord.length - 1);
         words[w] = upperedWord;
     }
     return words.join(' ');
