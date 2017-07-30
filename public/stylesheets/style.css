@@ -3,6 +3,7 @@ body {
   font-family: 'Frank Ruhl Libre', sans-serif;
   letter-spacing: 1px;
   width: 100%;
+  font-size: 1.1em;
 }
 
 html, body {
@@ -20,8 +21,12 @@ a:hover {
   text-decoration: underline;
 }
 
+h1, h2, h3 {
+  font-family: 'Merriweather', sans-serif;
+}
+
 header {
-  background-color: darkblue;
+  background-color: #54418b;
   width: 100%;
   height: 8em;
   margin: 0;
@@ -42,12 +47,15 @@ header h2 span {
 }
 
 #sidebar {
+  font-size: 1em;
   float: left;
-  width: 20%;
+  margin-left: 15px;
+  width: 17%;
 }
 
 #sidebar ul {
   padding-left: 0;
+  font-size: .8em;
 }
 
 #sidebar li {
@@ -58,7 +66,6 @@ header h2 span {
 
 #sidebar a {
   color: black;
-  font-weight: bold;
   margin-top: .5em;
 }
 
@@ -68,40 +75,57 @@ main {
 }
 
 #wrapper {
-  max-width: 900px;
+  max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
 }
 
 #subtitle {
-  margin-left: 3em;
+  margin: 2em auto 1.5em 2em;
 }
 
-main #intro-paragraph {
-  padding: 2em 0 2em 0;
+main #center {
+  width: 70%;
+}
+
+main #center #intro-paragraph {
+  padding: 1.5em 0 1.5em 0;
   border: cornflowerblue solid 4px;
   border-left: 0px;
   border-right: 0px;
   margin-left: .5em;
-  width: 70%;
 }
 
-main #intro-paragraph p {
+main #center #intro-paragraph p {
   margin: auto 10px auto 10px;
+  line-height: 1.5em;
 }
 
-main #anchors {
-  width: 25%;
-  background-color: #dedede;
-  border-radius: 8px;
-  float: right;
+main #center section {
+  margin-top: 2em;
+  padding-bottom: 1em;
 }
 
-main #anchors p {
-  margin-left: 2em;
+main #center section p {
+  margin: 1em;
 }
 
-.code-snippet {
+main #center .section-header {
+  background-color: black;
+  color: white;
+  padding: 5px;
+  display: inline-block;
+  margin: auto auto 0 1em;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+main #center .section-header span {
+  margin-left: 0;
+}
+
+main #center .code-snippet {
   margin: 1.5em;
   border-radius: 5px;
   background-color: lightgray;
@@ -110,6 +134,29 @@ main #anchors p {
   border-left: 4px solid;
   border-color: cornflowerblue;
 }
+main #anchors {
+  margin-right: 20px;
+  width: 25%;
+  background-color: #dedede;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  float: right;
+}
+
+main #anchors p, span {
+  margin-left: 2em;
+}
+
+
+main #anchors li {
+  list-style-type: none;
+}
+
+main #anchors p {
+
+}
+
 
 .code-snippet .keyword {
   color: darkorange;
@@ -137,8 +184,4 @@ main #anchors p {
 
 .quote {
 
-}
-
-section p {
-  margin: 2em 1em 1em 0;
 }

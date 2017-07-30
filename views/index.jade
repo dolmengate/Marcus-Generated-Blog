@@ -16,13 +16,20 @@ block content
     main
       #anchors
         p On this page
-        p: a(href='#') Links to
-        p: a(href='#') Content on
-        p: a(href='#') This page
-        p: a(href='#') Anchors that is
+        ul
+          for anchor in anchorLinks
+            li: a(href='#')= anchor
+          else
+            li whoops
+      #center
+        #intro-paragraph
+          - var p0 = content.p0
+          p= p0
+        for headerText in sectionHeaders
+          section
+            h2.section-header: span #{headerText}
 
-      #intro-paragraph
-        p #{text}
-
-      section
-        h2.section-header: span
+            - var p1 = content.p1
+            p= p1
+            - var p2 = content.p2
+            p= p2
