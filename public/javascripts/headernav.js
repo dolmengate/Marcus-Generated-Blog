@@ -5,7 +5,7 @@ $(document).ready(function (){
     navs.forEach(function(nav) {
 
         $("#nav-button-" + nav).mouseup( function () {
-            
+
             var unselecteds = navs.filter(function (string) {
                 return string !== nav;
             });
@@ -15,7 +15,7 @@ $(document).ready(function (){
                     $("#nav-expanded-" + unselected).css({"display": "none"})
                 })
             }
-        }).click(function () {
+        }).mousedown(function () {
 
             $("#nav-expanded-" + nav).slideDown();
             $("#nav-button-" + nav).css({"background-color": "#54418b"});
