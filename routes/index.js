@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var tf = require('../libs/TextFill');
+var tf = require('../libs/textfill/TextFill');
 
 var links = [];
 for (var i = 0; i < 20; i++ )
@@ -31,7 +31,8 @@ router.get('/', function(req, res, next) {
       subtitle: tf.title(5),
       sidebarLinks: links,
       anchorLinks: anchorLinks,
-      sectionHeaders: headers
+      sectionHeaders: headers,
+      codez: "hi"
   });
 });
 

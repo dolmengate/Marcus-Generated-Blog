@@ -179,6 +179,14 @@ main #center section {
   padding-bottom: 1em;
 }
 
+main #center textarea {
+  outline: none;
+  margin: 2em 0 0 3em;
+  font-family: "Droid Sans Mono", monospace;
+  padding: 1em;
+  letter-spacing: 1px;
+}
+
 main #center section p {
   margin: 1em;
 }
@@ -200,12 +208,7 @@ main #center .section-header span {
 }
 
 main #center .code-snippet {
-  margin: 1.5em;
-  border-radius: 5px;
-  background-color: lightgray;
-  font-family: "Droid Sans Mono", monospace;
-  padding: 1em;
-  border-left: 4px solid;
+
   border-color: cornflowerblue;
 }
 

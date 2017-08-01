@@ -60,6 +60,9 @@ block content
         #intro-paragraph
           - var p0 = content.p0
           p= p0
+
+        textarea(rows= 15, cols=60)#codez= codez
+
         for headerText in sectionHeaders
           section
             h2.section-header: span #{headerText}

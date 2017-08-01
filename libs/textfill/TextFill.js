@@ -1,7 +1,7 @@
 const fs = require('fs');
 var exports = module.exports = {};
 
-var lines = fs.readFileSync(process.env.HOME + '/sites/me.com/libs/marcus.txt').toString().split("\n");
+var lines = fs.readFileSync(process.env.HOME + '/sites/me.com/libs/textfill/marcus.txt').toString().split("\n");
 
 // get unmodified text of a given number from a given starting point
 exports.fill = function (numWords, start) {

@@ -2,6 +2,7 @@ $(document).ready(function (){
 
     var navs = ["one", "two", "three"];
 
+    // navigation bar onclick animations and mouseovers
     navs.forEach(function(nav) {
 
         $("#nav-button-" + nav).mouseup( function () {
@@ -15,11 +16,11 @@ $(document).ready(function (){
                     $("#nav-expanded-" + unselected).css({"display": "none"})
                 })
             }
-        }).mousedown(function () {
 
+        }).mousedown(function () {
             $("#nav-expanded-" + nav).slideDown();
-            $("#nav-button-" + nav).css({"background-color": "#54418b"});
-            $("#nav-button-" + nav).find("p").css({"color": "white"});
+            $(this).css({"background-color": "#54418b"});
+            $(this).find("p").css({"color": "white"});
         });
 
         $("#nav-expanded-" + nav).mouseleave(function () {
@@ -27,13 +28,11 @@ $(document).ready(function (){
         });
 
         $("#nav-button-" + nav).mouseenter(function () {
-            $("#nav-button-" + nav).css({"background-color": "white"});
-            $("#nav-button-" + nav).find("p").css({"color": "#54418b"});
-        });
-
-        $("#nav-button-" + nav).mouseleave(function () {
-            $("#nav-button-" + nav).css({"background-color": "#54418b"});
-            $("#nav-button-" + nav).find("p").css({"color": "white"});
+            $(this).css({"background-color": "white"});
+            $(this).find("p").css({"color": "#54418b"});
+        }).mouseleave(function () {
+            $(this).css({"background-color": "#54418b"});
+            $(this).find("p").css({"color": "white"});
         })
     });
 });
