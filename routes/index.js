@@ -8,7 +8,7 @@ for (var i = 0; i < 20; i++ )
 
 var headers = [];
 for (var j = 0; j < 4; j++)
-  headers[j] = tf.title(2);
+  headers[j] = tf.title(3);
 
 var content = {};
 for (var k = 0; k < 8; k++) {
@@ -16,16 +16,21 @@ for (var k = 0; k < 8; k++) {
     content[prop] = tf.fill(60);
 }
 
+var anchorLinks = [];
+
+for (var l = 0; l < headers.length; l++) {
+  anchorLinks[l] = headers[l];
+}
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', {
-    title: "A generated website",
+    title: "Using views with Express and Jade",
       introText: tf.fill(60),
       content: content,
-      subtitle: tf.title(6),
+      subtitle: tf.title(5),
       sidebarLinks: links,
-      anchorLinks: ["Foo", "Bar", "Me", "You"],
+      anchorLinks: anchorLinks,
       sectionHeaders: headers
   });
 });

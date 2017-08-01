@@ -3,11 +3,46 @@ extends layout
 block content
 
   header
-    h2= title
+    #header-wrapper
+      h2= title
+      #git-logo
+        a(href='http://www.github.com/dolmengate/')
+          img(src='../images/GitHub-Mark-32px.png')
+      nav
+        #nav-wrapper
+          #nav-topics
+            #nav-button-one.nav-button
+              p link words
+              .nav-arrow
+                p &#x25BC;
+            #nav-button-two.nav-button
+              p more stuff
+              .nav-arrow
+                p &#x25BC;
+            #nav-button-three.nav-button
+              p yet more links
+              .nav-arrow
+                p &#x25BC;
+
+          #nav-expandeds
+            #nav-expanded-two.nav-button-expanded
+              p: a(href='') Two two two
+              p: a(href='') text you didn't
+              p: a(href='') see before
+            #nav-expanded-three.nav-button-expanded
+              p: a(href='') Three three three
+              p: a(href='') text you didn't
+              p: a(href='') see before
+            #nav-expanded-one.nav-button-expanded
+              p: a(href='') One one one
+              p: a(href='') text you didn't
+              p: a(href='') see before
+
   #wrapper
     #subtitle
       h1= subtitle
     #sidebar
+      p See also
       ul
         for link in sidebarLinks
           li: a(href='')= link
@@ -17,8 +52,8 @@ block content
       #anchors
         p On this page
         ul
-          for anchor in anchorLinks
-            li: a(href='#')= anchor
+          for anchorLink in sectionHeaders
+            li: a(href='#')= anchorLink
           else
             li whoops
       #center
@@ -28,7 +63,6 @@ block content
         for headerText in sectionHeaders
           section
             h2.section-header: span #{headerText}
-
             - var p1 = content.p1
             p= p1
             - var p2 = content.p2

@@ -13,7 +13,7 @@ html, body {
 }
 
 a {
-  color: cornflowerblue;
+  color: #3836a4;
   text-decoration: none;
 }
 
@@ -33,24 +33,96 @@ header {
   border-bottom: #000 solid 4px;
 }
 
+header > #header-wrapper {
+  max-width: 900px;
+  margin: 0 auto 0 auto;
+  padding: 1em;
+  padding-bottom: 0px;
+}
+
 header h2 {
   color: white;
   font-weight: bold;
-  padding-top: 1em;
-  margin: 0 auto 0 auto;
-  padding-left: 1em;
-  max-width: 900px;
 }
 
 header h2 span {
   background-color: white;
 }
 
+header #git-logo {
+  float: right;
+  position: relative;
+  bottom: 80px;
+}
+
+header nav {
+  margin: 1.5em 20px 10px 20px;
+}
+
+#nav-wrapper .nav-button:hover {
+  cursor: pointer;
+}
+
+header nav .nav-button {
+  display:inline;
+  margin-left: 1em;
+}
+
+header nav .nav-button-expanded {
+  display: none;
+  width: 10em;
+  background-color: white;
+  padding: 20px;
+  border: solid 2px lightgray;
+  border-left: none;
+  border-top: none;
+  z-index: 0;
+  position: relative;
+}
+
+header nav #nav-expanded-one {
+  z-index: 1;
+}
+
+header nav #nav-expanded-two {
+  z-index: 2;
+  left: 9em;
+}
+
+header nav #nav-expanded-three {
+  z-index: 3;
+  left: 18em;
+}
+
+header nav #nav-wrapper .nav-button-expanded p {
+  margin: 0;
+}
+
+header nav #nav-wrapper .nav-button p {
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: white;
+  margin: 5px;
+  display: inline-block;
+}
+
+header nav #nav-wrapper .nav-arrow {
+  font-size: .8em;
+  color: white;
+  display: inline-block;
+}
+
 #sidebar {
   font-size: 1em;
   float: left;
   margin-left: 15px;
-  width: 17%;
+  width: 18%;
+}
+
+#sidebar > p {
+  font-size: 1.2em;
+  margin: 0 0 0 1em
 }
 
 #sidebar ul {
@@ -62,6 +134,7 @@ header h2 span {
   list-style-type: none;
   margin-top: .5em;
   word-wrap: break-word;
+  letter-spacing: normal;
 }
 
 #sidebar a {
@@ -80,8 +153,8 @@ main {
   margin-right: auto;
 }
 
-#subtitle {
-  margin: 2em auto 1.5em 2em;
+#wrapper #subtitle {
+  margin: 2em auto 2em 4em;
 }
 
 main #center {
@@ -91,8 +164,8 @@ main #center {
 main #center #intro-paragraph {
   padding: 1.5em 0 1.5em 0;
   border: cornflowerblue solid 4px;
-  border-left: 0px;
-  border-right: 0px;
+  border-left: 0;
+  border-right: 0;
   margin-left: .5em;
 }
 
@@ -113,12 +186,13 @@ main #center section p {
 main #center .section-header {
   background-color: black;
   color: white;
-  padding: 5px;
+  font-size: 1.3em;
+  padding: 0 3px 0 3px;
   display: inline-block;
   margin: auto auto 0 1em;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 
 main #center .section-header span {
@@ -134,6 +208,7 @@ main #center .code-snippet {
   border-left: 4px solid;
   border-color: cornflowerblue;
 }
+
 main #anchors {
   margin-right: 20px;
   width: 25%;
@@ -148,6 +223,9 @@ main #anchors p, span {
   margin-left: 2em;
 }
 
+main #anchors ul {
+  padding-left: 1em;
+}
 
 main #anchors li {
   list-style-type: none;
