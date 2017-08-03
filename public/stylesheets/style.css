@@ -208,8 +208,31 @@ main #center .section-header span {
 }
 
 main #center .code-snippet {
+  font-family: "Droid Sans Mono", monospace;
+  font-size: .8em;
+  background-color: rgba(84, 65, 139, 0.15);
+  padding: 1em;
+  margin: 1em auto 1em auto;
+  width: 85%;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
 
-  border-color: cornflowerblue;
+main #center .code-snippet .line {
+
+}
+
+main #center .code-snippet .line .line-number {
+  color: grey;
+  padding-right: 1em;
+  float: left;
+  user-select: none;
+}
+
+main #center .code-snippet .line .line-text {
+  white-space: pre;
+  padding-left: 3em;
 }
 
 main #anchors {
@@ -222,7 +245,7 @@ main #anchors {
   float: right;
 }
 
-main #anchors p, span {
+main #anchors p > span {
   margin-left: 2em;
 }
 
@@ -249,10 +272,6 @@ main #anchors p {
 
 .code-snippet .number {
   color: dodgerblue;
-}
-
-.code-snippet .variable {
-  color: mediumblue;
 }
 
 .code-snippet .property {

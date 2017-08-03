@@ -61,7 +61,12 @@ block content
           - var p0 = content.p0
           p= p0
 
-        textarea(rows= 15, cols=60)#codez= codez
+        #snippet.code-snippet
+          #line-0.line
+            #line-number-0.line-number 0
+            #line-text-0.line-text function () { return 'your code here' } ;
+
+        textarea(rows= 15, cols=60. placeholder="Start typing here.")#codez= codez
 
         for headerText in sectionHeaders
           section
