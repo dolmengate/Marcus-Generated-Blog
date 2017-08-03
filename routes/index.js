@@ -41,19 +41,41 @@ router.post('/', function(req, res) {
   console.log('input: ' + textareaText);
 
   var regexes = {
-                  "keyword": /(function |for |while |if |return |break |continue |var |let |const |;)/g,
+                  "keyword": /(function|for|while|if|return |break|continue|var|let|const|;)/g,
                   "string": /['"](\w*\d*\s*[;,./|[\]\-+]*)*['"]/g,
                   "number": /\d+\.*\d+/g,
                   "property": /\.\w+\d*/g,
                   "comment": /\/{2,}\s*(\w*\d*\s*)*/g
   };
 
+  console.log(regexes["keyword"]);
+
   var markup = { };    // linenumber: "markup"
   var textArr = textareaText.split('\n');
+  var regexTypes = Object.keys(regexes);
 
-  for (var line = 0; line < textArr.length; line++) {
-    markup[line] = " ";
-    markup[line] += textArr[line].replace(regexes.keyword, "<span class=\'keyword\'>$&</span>")
+  for (var i in regexTypes) {
+    var regex = regexTypes[i];
+    for (var line = 0; line < textArr.length; line++) {
+      if (lineChunks === undefined) {
+        var lineChunks = textArr[line].split(' ');      // splitting on spaces doesn't allow for multiword strings
+      }
+
+      // if it's a new line create it
+      if (markup[line] === undefined)
+        markup[line] = " ";
+
+      lineChunks = lineChunks.map(function (chunk) {
+        if (!/span/.test(chunk)) {
+          var highlighted = chunk.replace(regexes[regex], "<span class=\'" + regex + "\'>$&</span>");
+          return highlighted;
+        }
+        return chunk;
+      });
+
+      markup[line] = lineChunks.join(' ');
+
+    }
   }
 
   console.log(markup);
