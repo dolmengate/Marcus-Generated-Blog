@@ -59,8 +59,12 @@ router.post('/', function(req, res) {
     var regex = regexTypes[i];
       if (lineChunks === undefined)
         var lineChunks = lineText.split(' ');      // splitting on spaces doesn't allow for multiword strings
+        var specialCharacter = /%\d(\d|[A-Z])/g;
 
       lineChunks = lineChunks.map(function (chunk) {
+        if (specialCharacter.test(chunk)) {
+          chunk = decodeChars(specialCharacter, chunk);
+        }
         if (!/span/.test(chunk)) {
           var highlighted = chunk.replace(regexes[regex], "<span class=\'" + regex + "\'>$&</span>");
           return highlighted;
@@ -79,5 +83,43 @@ router.post('/', function(req, res) {
 function randInt(start, end) {
     return Math.floor(Math.random() * end) + start;
 }
+
+function decodeChars(re, chunk) {
+
+  var chars = {
+    '%24': '$',
+    '%26': '&',
+    '%2B': '+',
+    '%2C': ',',
+    '%2F': '/',
+    '%3A': ':',
+    '%3B': ';',
+    '%3D': '=',
+    '%3F': '?',
+    '%40': '@',
+    '%20': ' ',
+    '%22': '\"',
+    '%3C': '<',
+    '%3E': '>',
+    '%23': '#',
+    '%25': '%',
+    '%7B': '{',
+    '%7D': '}',
+    '%7C': '|',
+    '%5C': '\\',
+    '%5E': '^',
+    '%7E': '~',
+    '%5B': '[',
+    '%5D': ']',
+    '%60': '`'
+  };
+
+  var decoded = chunk.replace(re, function (match) {
+    chunk = chars[match];
+    return chunk;
+  });
+  return decoded;
+}
+
 
 module.exports = router;
