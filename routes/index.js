@@ -37,33 +37,28 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res) {
-  var textareaText = req.body.textareaText;
-  console.log('input: ' + textareaText);
 
-  var regexes = {
-                  "keyword": /(function|for|while|if|return |break|continue|var|let|const|;)/g,
-                  "string": /['"](\w*\d*\s*[;,./|[\]\-+]*)*['"]/g,
-                  "number": /\d+\.*\d+/g,
-                  "property": /\.\w+\d*/g,
-                  "comment": /\/{2,}\s*(\w*\d*\s*)*/g
+  const regexes = {
+    "keyword": /(function|for|while|if|return|break|continue|var|let|const|;)/g,
+    "string": /['"](\w*\d*\s*[;,./|[\]\-+]*)*['"]/g,
+    "number": /\d+\.*\d*/g,
+    "property": /\.\w+\d*/g,
+    "comment": /\/{2,}\s*(\w*\d*\s*)*/g
   };
 
-  console.log(regexes["keyword"]);
-
-  var markup = { };    // linenumber: "markup"
-  var textArr = textareaText.split('\n');
+  var markup = { };    // linenumber: "text with added markup"
   var regexTypes = Object.keys(regexes);
+
+  var lineNumber = req.body.lineNumber;
+  var lineText = req.body.lineText;
+
+  if (lineText === undefined)
+    lineText = '';
 
   for (var i in regexTypes) {
     var regex = regexTypes[i];
-    for (var line = 0; line < textArr.length; line++) {
-      if (lineChunks === undefined) {
-        var lineChunks = textArr[line].split(' ');      // splitting on spaces doesn't allow for multiword strings
-      }
-
-      // if it's a new line create it
-      if (markup[line] === undefined)
-        markup[line] = " ";
+      if (lineChunks === undefined)
+        var lineChunks = lineText.split(' ');      // splitting on spaces doesn't allow for multiword strings
 
       lineChunks = lineChunks.map(function (chunk) {
         if (!/span/.test(chunk)) {
@@ -73,12 +68,11 @@ router.post('/', function(req, res) {
         return chunk;
       });
 
-      markup[line] = lineChunks.join(' ');
-
-    }
+      markup[lineNumber] = lineChunks.join(' ');
   }
 
-  console.log(markup);
+  // add placeholder to keep empty line-text divs inline
+  markup[lineNumber] = ' ' + markup[lineNumber];
   res.send(markup);
 });
 

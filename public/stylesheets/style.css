@@ -232,7 +232,11 @@ main #center .code-snippet .line .line-number {
 
 main #center .code-snippet .line .line-text {
   white-space: pre;
-  padding-left: 3em;
+  padding-left: 1em;
+}
+
+main #center .code-snippet .line .line-placeholder {
+  user-select: none;
 }
 
 main #anchors {
