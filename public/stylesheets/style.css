@@ -113,31 +113,31 @@ header nav #nav-wrapper .nav-arrow {
   display: inline-block;
 }
 
-#sidebar {
+#see-also {
   font-size: 1em;
   float: left;
   margin-left: 15px;
   width: 18%;
 }
 
-#sidebar > p {
+#see-also > p {
   font-size: 1.2em;
   margin: 0 0 0 1em
 }
 
-#sidebar ul {
+#see-also ul {
   padding-left: 0;
   font-size: .8em;
 }
 
-#sidebar li {
+#see-also li {
   list-style-type: none;
   margin-top: .5em;
   word-wrap: break-word;
   letter-spacing: normal;
 }
 
-#sidebar a {
+#see-also a {
   color: black;
   margin-top: .5em;
 }
@@ -239,7 +239,7 @@ main #center .code-snippet .line .line-placeholder {
   user-select: none;
 }
 
-main #anchors {
+main #on-this-page {
   margin-right: 20px;
   width: 25%;
   background-color: #dedede;
@@ -249,20 +249,20 @@ main #anchors {
   float: right;
 }
 
-main #anchors p > span {
+main #on-this-page p > span {
   margin-left: 2em;
 }
 
-main #anchors ul {
+main #on-this-page ul {
   padding-left: 1em;
 }
 
-main #anchors li {
+main #on-this-page li {
   list-style-type: none;
 }
 
-main #anchors p {
-
+main #on-this-page p {
+  margin-left: 1em;
 }
 
 

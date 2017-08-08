@@ -1,3 +1,45 @@
+// MIXINS //
+
+// body > wrapper
+mixin subtitle
+  #subtitle
+    h1= subtitle
+
+mixin seealso
+  #see-also
+    p See also
+    ul
+      for link in seeAlsos
+        li: a(href='')= link
+      else
+        li oops
+
+// body > wrapper > main
+mixin onthispage
+  #on-this-page
+    p On this page
+    ul
+      for anchorLink in sectionHeaders
+        li: a(href='#')= anchorLink
+      else
+        li whoops
+
+// body > wrapper > main > center
+mixin introparagraph
+  #intro-paragraph
+    - var p0 = content.p0
+    p= p0
+
+mixin syntaxdemo
+  #snippet.code-snippet
+    #line-0.line
+      #line-number-0.line-number 0
+      #line-text-0.line-text function () { return 'your code here' } ;
+
+  textarea(rows= 15, cols=60. placeholder="Start typing here.")#codez= codez
+
+// MIXINS //
+
 doctype html
 html
   head
@@ -9,4 +51,39 @@ html
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre|Oswald')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
+    header
+      #header-wrapper
+        h2= title
+        #git-logo
+          a(href='http://www.github.com/dolmengate/')
+            img(src='../images/GitHub-Mark-32px.png')
+        nav
+          #nav-wrapper
+            #nav-topics
+              #nav-button-one.nav-button
+                p link words
+                .nav-arrow
+                  p &#x25BC;
+              #nav-button-two.nav-button
+                p more stuff
+                .nav-arrow
+                  p &#x25BC;
+              #nav-button-three.nav-button
+                p yet more links
+                .nav-arrow
+                  p &#x25BC;
+
+            #nav-expandeds
+              #nav-expanded-two.nav-button-expanded
+                p: a(href='') Two two two
+                p: a(href='') text you didn't
+                p: a(href='') see before
+              #nav-expanded-three.nav-button-expanded
+                p: a(href='') Three three three
+                p: a(href='') text you didn't
+                p: a(href='') see before
+              #nav-expanded-one.nav-button-expanded
+                p: a(href='') One one one
+                p: a(href='') text you didn't
+                p: a(href='') see before
     block content

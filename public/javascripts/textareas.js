@@ -35,7 +35,7 @@ $(document).ready(function () {
     lineText = $this.val().split('\n')[lineNumber];
 
     // send line content of current line only
-    $.post('/', {"lineText": lineText, "lineNumber": lineNumber})
+    $.post('/syntaxdemo', {"lineText": lineText, "lineNumber": lineNumber})
       .done(function (res) { // e.g.: { 0: "<span class='keyword'>for</span>" }
 
         // if line div doesn't already exist
