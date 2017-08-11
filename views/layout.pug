@@ -1,6 +1,6 @@
-// MIXINS //
+//- MIXINS
 
-// body > wrapper
+//- body > wrapper
 mixin subtitle
   #subtitle
     h1= subtitle
@@ -14,17 +14,19 @@ mixin seealso
       else
         li oops
 
-// body > wrapper > main
+//- body > wrapper > main
 mixin onthispage
   #on-this-page
-    p On this page
-    ul
+    #otp-title
+      p On this page
+      span#arrow &#x25BC;
+    ul#otp-ul
       for anchorLink in sectionHeaders
         li: a(href='#')= anchorLink
       else
         li whoops
 
-// body > wrapper > main > center
+//- body > wrapper > main > center
 mixin introparagraph
   #intro-paragraph
     - var p0 = content.p0
@@ -38,7 +40,7 @@ mixin syntaxdemo
 
   textarea(rows= 15, cols=60. placeholder="Start typing here.")#codez= codez
 
-// MIXINS //
+//- MIXINS
 
 doctype html
 html
@@ -47,6 +49,7 @@ html
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
     script(src='../javascripts/headernav.js')
     script(src='../javascripts/textareas.js')
+    script(src='../javascripts/onthispage.js')
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Merriweather:700')
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre|Oswald')
     link(rel='stylesheet', href='/stylesheets/style.css')
