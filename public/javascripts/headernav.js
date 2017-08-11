@@ -5,29 +5,31 @@ $(document).ready(function (){
     // navigation bar onclick animations and mouseovers
     navs.forEach(function(nav) {
 
-        $("#nav-button-" + nav).mouseup( function () {
+        var $navButton = $("#nav-button-" + nav);
+        var $navExpanded = $("#nav-expanded-" + nav);
 
-            var unselecteds = navs.filter(function (string) {
-                return string !== nav;
-            });
-
-            if ($("#nav-expanded-" + nav).css("display") === "block") {
-                unselecteds.forEach( function (unselected) {
-                    $("#nav-expanded-" + unselected).css({"display": "none"})
-                })
-            }
-
-        }).mousedown(function () {
-            $("#nav-expanded-" + nav).slideDown();
+        $navButton.mousedown(function () {
+            // show expanded nav and revert to normal colors
+            $navExpanded.show();
             $(this).css({"background-color": "#54418b"});
             $(this).find("p").css({"color": "white"});
+
+          // get all nav buttons not clicked
+          var unselecteds = navs.filter(function (string) { return string !== nav; });
+
+          // and hide them so the expanded nav displays properly
+          if ($navExpanded.css("display") === "block")
+            unselecteds.forEach( function (unselected) {
+              $("#nav-expanded-" + unselected).css({"display": "none"})
+            })
         });
 
-        $("#nav-expanded-" + nav).mouseleave(function () {
-            $("#nav-expanded-" + nav).slideUp();
+        $navExpanded.mouseleave(function () {
+            $navExpanded.hide();
         });
 
-        $("#nav-button-" + nav).mouseenter(function () {
+        // invert colors on hover, etc.
+        $navButton.mouseenter(function () {
             $(this).css({"background-color": "white"});
             $(this).find("p").css({"color": "#54418b"});
         }).mouseleave(function () {
