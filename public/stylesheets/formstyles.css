@@ -1,0 +1,49 @@
+form {
+    background-color: #dedede;
+    padding: .5em;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-size: .8em;
+    margin-top: 1em;
+    width: inherit;
+}
+
+form label {
+    margin: 10px;
+    display: inherit;
+}
+
+form input {
+    margin: 8px;
+    display: inherit;
+}
+
+fieldset {
+    width: 85%;
+    border: none;
+    margin: 0 auto 0 auto;
+    padding: 0;
+}
+
+select {
+    margin-left: 8px;
+}
+
+#labelcol {
+    float:left;
+    margin-bottom: 1em;
+    text-align: right;
+}
+
+#inputcol {
+    float:left;
+    margin-bottom: 1em;
+    border-left: solid darkgrey 2px;
+}
+
+#submitreset {
+    display: inline;
+    position: relative;
+    left: 15em;
+}
