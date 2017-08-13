@@ -1,8 +1,3 @@
-extends layout
-
-mixin stepbanner
-    p hi
-
 mixin userinfo
     form(action='localhost:3030/forms')
         fieldset
@@ -88,3 +83,67 @@ mixin userinfo
             #submitreset
                 input(type='reset')
                 input(type='submit')
+
+doctype html
+html
+    head
+        title= title
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+        script(src='../javascripts/headernav.js')
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Merriweather:700')
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre|Oswald')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='stylesheet', href='/stylesheets/formstyles.css')
+    body
+        header
+            #header-wrapper
+                h2= title
+                #git-logo
+                    a(href='http://www.github.com/dolmengate/')
+                        img(src='../images/GitHub-Mark-32px.png')
+                nav
+                    #nav-wrapper
+                        #nav-topics
+                            #nav-button-one.nav-button
+                                p link words
+                                .nav-arrow
+                                    p &#x25BC;
+                            #nav-button-two.nav-button
+                                p more stuff
+                                .nav-arrow
+                                    p &#x25BC;
+                            #nav-button-three.nav-button
+                                p yet more links
+                                .nav-arrow
+                                    p &#x25BC;
+
+                        #nav-expandeds
+                            #nav-expanded-two.nav-button-expanded
+                                p: a(href='') Two two two
+                                p: a(href='') text you didn't
+                                p: a(href='') see before
+                            #nav-expanded-three.nav-button-expanded
+                                p: a(href='') Three three three
+                                p: a(href='') text you didn't
+                                p: a(href='') see before
+                            #nav-expanded-one.nav-button-expanded
+                                p: a(href='') One one one
+                                p: a(href='') text you didn't
+                                p: a(href='') see before
+        #progressbanner
+            #stepcount Step 2
+            #pbarcontainer
+                #progressbar
+                    #inner
+                        #step1.step
+                            #s1label.label Step 1
+                        #step2.step
+                            #s2label.label Step 2
+                        #step3.step.nextstep
+                            #s3label.label Step 3
+                        #step4.step
+                            #s4label.label Step 4
+                        #step5.step
+                            #s5label.label Step 5
+                        #currentstep
+        block content
