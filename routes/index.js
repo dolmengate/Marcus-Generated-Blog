@@ -5,7 +5,7 @@ var tf = require('../libs/textfill/TextFill');
 
 var seeAlsos = [];
 for (var i = 0; i < 20; i++ )
-  seeAlsos[i] = tf.title(randInt(2, 3));
+  seeAlsos.push(tf.title(randInt(2, 3)));
 
 var sectionHeaders = [];
 for (var j = 0; j < 4; j++)

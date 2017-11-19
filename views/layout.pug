@@ -38,7 +38,8 @@ mixin syntaxdemo
       #line-number-0.line-number 0
       #line-text-0.line-text function () { return 'your code here' } ;
 
-  textarea(rows= 15, cols=60. placeholder="Start typing here.")#codez= codez
+  textarea(rows= 15, cols=60. placeholder="Start typing here.")#codez
+
 
 //- MIXINS
 
@@ -65,15 +66,15 @@ html
           #nav-wrapper
             #nav-topics
               #nav-button-one.nav-button
-                p link words
+                p more here
                 .nav-arrow
                   p &#x25BC;
               #nav-button-two.nav-button
-                p more stuff
+                p fake stuff
                 .nav-arrow
                   p &#x25BC;
               #nav-button-three.nav-button
-                p yet more links
+                p not real links
                 .nav-arrow
                   p &#x25BC;
 
@@ -87,7 +88,7 @@ html
                 p: a(href='') text you didn't
                 p: a(href='') see before
               #nav-expanded-one.nav-button-expanded
-                p: a(href='') One one one
-                p: a(href='') text you didn't
-                p: a(href='') see before
+                p: a(href='/') Index
+                p: a(href='/syntaxdemo') Syntax demo
+                p: a(href='/forms') Forms sample
     block content

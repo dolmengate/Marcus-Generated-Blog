@@ -8,9 +8,19 @@ router.get('/', function(req, res) {
   });
 });
 
-router.post('/submit', function (req, res) {
-  var firstName = req.body.firstname;
-  var lastname = req.body.lastname;
+router.post('/', function (req, res) {
+  console.log('data received');
+  res.render('forms', {
+    title: 'A website which displays things',
+    firstName: req.body.firstname,
+      lastName: req.body.lastname,
+      addrOne: req.body.address1,
+      addrTwo: req.body.address2,
+      city: req.body.city,
+      state: req.body.state,
+      zip: req.body.zip,
+      country: req.body.country
+  });
 });
 
 module.exports = router;

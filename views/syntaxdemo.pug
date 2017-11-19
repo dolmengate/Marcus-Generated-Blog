@@ -3,16 +3,6 @@ extends layout
 block content
   #wrapper
     +subtitle
-    +seealso
     main
       #center
-        +onthispage
         +syntaxdemo
-
-        for headerText in sectionHeaders
-          section
-            h2.section-header: span #{headerText}
-            - var p1 = content.p1
-            p= p1
-            - var p2 = content.p2
-            p= p2
